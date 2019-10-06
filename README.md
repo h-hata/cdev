@@ -1,6 +1,6 @@
 # cdev
-An example of Linux kernel module of character device, addition logical device. 
-
+An example of Linux kernel module of character device, addition logical device.   
+<pre>
 /*example*/
 $echo 1 > /dev/asyoulike
 $cat /dev/asyoulike
@@ -25,3 +25,4 @@ You are so silly
 $echo Hello>/dev/asyoulike
 $cat /dev/asyoulike
 Good day!
+</pre>
