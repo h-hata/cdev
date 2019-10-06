@@ -1,3 +1,10 @@
+/*environment*/
+Ubuntu18
+apt install build-essential
+Centos8
+yum groupinstall "Development Tools"
+yum install elfutils-libelf-devel
+
 /*build*/
 $ echo "obj-m := add.o" > Makefile
 $ make -C /lib/modules/`uname -r`/build M=$PWD modules
