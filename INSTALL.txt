@@ -1,0 +1,22 @@
+/*build*/
+$ echo "obj-m := add.o" > Makefile
+$ make -C /lib/modules/`uname -r`/build M=$PWD modules
+or you can describe Makefile as the followings
+-----
+obj-m := add.o
+all:
+	make -C /lib/modules/`uname -r`/build M=$(PWD) modules
+clean:
+	rm -fr *.ko *.o .*.cmd
+-----
+/*install*/
+#insmod add.ko
+#grep add /proc/devices
+memorize the major number XXX displayed here
+#mknod /dev/asyoulike c XXX 0
+#chmown a+wr /dev/asyoulike
+
+/*remove*/
+#rmmod add
+#rm /dev/asyoulike
+
